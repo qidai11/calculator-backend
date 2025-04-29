@@ -1,0 +1,16 @@
+# .gitignore 内容
+
+# 后端排除
+backend/gen/
+
+# 前端排除
+frontend/node_modules/
+
+# 通用排除
+.DS_Store
+.env
+*.log
+.idea/
+.vscode/
+dist/
+build/
