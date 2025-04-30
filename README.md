@@ -51,3 +51,7 @@ npm run dev
 # 前端测试（还存在bug，暂未完成）
 npm run test:watch
 npm run test:coverage
+```
+
+## 效果图
+![Uploading aaa010e87edbfec72b67af0a295d23a.png…]()
