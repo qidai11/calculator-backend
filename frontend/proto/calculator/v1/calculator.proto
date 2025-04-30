@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package calculator.v1;
+
+option go_package = "calculator/backend/gen/calculator/v1;calculatorv1";
+
+// 计算器服务定义
+service CalculatorService {
+  // 加法运算
+  // 请求参数：a + b
+  rpc Add(OperationRequest) returns (OperationResponse) {}
+  
+  // 减法运算 
+  // 请求参数：a - b
+  rpc Subtract(OperationRequest) returns (OperationResponse) {}
+  
+  // 乘法运算
+  // 请求参数：a * b
+  rpc Multiply(OperationRequest) returns (OperationResponse) {}
+  
+  // 除法运算
+  // 请求参数：a / b（当b=0时返回错误）
+  rpc Divide(OperationRequest) returns (OperationResponse) {}
+}
+
+message OperationRequest {
+  double a = 1;
+  double b = 2;
+}
+
+message OperationResponse {
+  double result = 1;
+}

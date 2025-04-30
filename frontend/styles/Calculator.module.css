@@ -1,0 +1,131 @@
+/* 所有类名自动添加哈希后缀实现作用域隔离 */
+.container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.inputGroup {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.numberInput {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.numberInput:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.operatorSelect {
+    /* 基础样式 */
+    padding: 0.8rem 2.5rem 0.8rem 1rem; /* 增加右侧留白 */
+    width: 80px; /* 固定宽度避免挤压 */
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: #f8f9fa;
+    font-size: 1.1rem;
+    color: #2d3436;
+    transition: all 0.3s ease;
+
+    /* 自定义下拉箭头 */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a90e2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.2em;
+    
+    /* 悬停效果 */
+    &:hover {
+        border-color: #4a90e2;
+        background-color: #fff;
+    }
+
+    /* 聚焦状态 */
+    &:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    }
+}
+
+.calculateButton {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4a90e2, #6c5ce7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calculateButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.resultBox {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #e3f2fd;
+    border-radius: 8px;
+    color: #1565c0;
+    font-size: 1.2rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.errorBox {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #ffebee;
+    border-radius: 8px;
+    color: #c62828;
+    font-size: 1rem;
+    text-align: center;
+    animation: shake 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .inputGroup {
+        flex-direction: column;
+    }
+}
