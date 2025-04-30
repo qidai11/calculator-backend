@@ -54,4 +54,5 @@ npm run test:coverage
 ```
 
 ## 效果图
-![Uploading aaa010e87edbfec72b67af0a295d23a.png…]()
+![aaa010e87edbfec72b67af0a295d23a](https://github.com/user-attachments/assets/c20a4f50-7d6d-4543-bbb3-3f8fd357339e)
+
