@@ -48,6 +48,6 @@ npm install
 # 启动前端
 npm run dev
 
-# 前端测试
+# 前端测试（还存在bug，暂未完成）
 npm run test:watch
 npm run test:coverage
